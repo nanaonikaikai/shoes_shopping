@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="dbConfig.properties">
+    </properties>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!-- 开启二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <typeAliases>
+    </typeAliases>
+        <environments default="development">
+            <environment id="development">
+                <transactionManager type="JDBC"/>
+                <dataSource type="POOLED">
+                    <property name="driver" value="${driver}"/>
+                    <property name="url" value="${url}"/>
+                    <property name="username" value="${username}"/>
+                    <property name="password" value="${password}"/>
+                </dataSource>
+
+
+            </environment>
+        </environments>
+    <mappers>
+        <mapper resource="mapper/carts/CartMapper.xml"></mapper>
+        <mapper resource="mapper/carts/ReceiveAddressMapper.xml"></mapper>
+        <mapper resource="mapper/goods/CategoryMapper.xml"></mapper>
+        <mapper resource="mapper/goods/ShoesColorMapper.xml"></mapper>
+        <mapper resource="mapper/goods/ShoesDetailMapper.xml"></mapper>
+        <mapper resource="mapper/goods/ShoesImgMapper.xml"></mapper>
+        <mapper resource="mapper/goods/ShoesMapper.xml"></mapper>
+        <mapper resource="mapper/goods/ShoesSizeMapper.xml"></mapper>
+        <mapper resource="mapper/orders/MyorderMapper.xml"></mapper>
+        <mapper resource="mapper/orders/OrderDetailMapper.xml"></mapper>
+        <mapper resource="mapper/users/CustLoginMapper.xml"></mapper>
+        <mapper resource="mapper/users/CustomerMapper.xml"></mapper>
+    </mappers>
+</configuration>
